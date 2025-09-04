@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Moon, Sun, Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isDark, setIsDark] = useState(true);
@@ -8,12 +8,12 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Education', href: '#education' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Publications', href: '#publications' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
+    { name: "About", href: "#about" },
+    { name: "Education", href: "#education" },
+    { name: "Projects", href: "#projects" },
+    { name: "Publications", href: "#publications" },
+    { name: "Skills", href: "#skills" },
+    { name: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
@@ -21,15 +21,15 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (isDark) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDark]);
 
@@ -40,7 +40,7 @@ const Navigation = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
   };
@@ -55,13 +55,9 @@ const Navigation = () => {
         // This is only intended for pages with a hero section at the top.
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-background/80 backdrop-blur-md shadow-professional-md border-b border-border'
-            : 'bg-transparent'
-
-        } ${!isScrolled ? 'dark' : ''}`}
-
-          } ${!isScrolled ? 'dark' : ''}`}
-
+            ? "bg-background/80 backdrop-blur-md shadow-professional-md border-b border-border"
+            : "bg-transparent"
+        } ${!isScrolled ? "dark" : ""}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -89,7 +85,7 @@ const Navigation = () => {
                   {item.name}
                 </motion.button>
               ))}
-              
+
               {/* Theme Toggle */}
               <motion.button
                 initial={{ opacity: 0, scale: 0 }}
@@ -123,12 +119,12 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       <motion.div
-        initial={{ opacity: 0, x: '100%' }}
+        initial={{ opacity: 0, x: "100%" }}
         animate={{
           opacity: isMobileMenuOpen ? 1 : 0,
-          x: isMobileMenuOpen ? '0%' : '100%',
+          x: isMobileMenuOpen ? "0%" : "100%",
         }}
-        transition={{ type: 'tween', duration: 0.3 }}
+        transition={{ type: "tween", duration: 0.3 }}
         className="fixed top-16 right-0 bottom-0 w-64 bg-background/95 backdrop-blur-md border-l border-border z-30 md:hidden"
       >
         <div className="p-6 space-y-6">
