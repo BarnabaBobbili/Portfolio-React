@@ -10,11 +10,6 @@ const Education = () => {
       period: "2022 - 2024",
       gpa: "3.8/4.0",
       description: "Specialized in Machine Learning, Statistical Analysis, and Big Data Technologies. Thesis on 'Deep Learning Applications in Predictive Analytics'.",
-      highlights: [
-        "Dean's List (4 semesters)",
-        "Graduate Research Assistant",
-        "Machine Learning Certification"
-      ]
     },
     {
       degree: "Bachelor of Engineering in Computer Science",
@@ -23,11 +18,6 @@ const Education = () => {
       period: "2018 - 2022",
       gpa: "3.7/4.0",
       description: "Comprehensive study in Computer Science fundamentals, Software Engineering, and Data Structures. Senior project focused on AI-powered web applications.",
-      highlights: [
-        "Magna Cum Laude",
-        "Computer Science Society President",
-        "Programming Competition Winner"
-      ]
     },
     {
       degree: "High School Diploma",
@@ -36,11 +26,6 @@ const Education = () => {
       period: "2016 - 2018",
       gpa: "95/100",
       description: "Strong foundation in Mathematics, Physics, and Computer Science. Active in robotics club and programming competitions.",
-      highlights: [
-        "Valedictorian",
-        "National Math Olympiad - Bronze Medal",
-        "Science Fair - First Place"
-      ]
     }
   ];
 
@@ -122,19 +107,6 @@ const Education = () => {
                       </p>
                     </div>
 
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Key Achievements:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {edu.highlights.map((highlight, highlightIndex) => (
-                          <span
-                            key={highlightIndex}
-                            className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20"
-                          >
-                            {highlight}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
                   </div>
                 </div>
 
