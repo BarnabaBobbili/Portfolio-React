@@ -59,15 +59,20 @@ const Skills = () => {
           className="flex flex-wrap justify-center gap-4"
         >
           {allSkills.map((skill, index) => (
-            <motion.div
+            <div
               key={skill.name}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="bg-card text-card-foreground rounded-lg px-4 py-2 shadow-sm border border-border hover:bg-secondary transition-colors"
+              className="group relative"
             >
-              <span className="font-medium">{skill.name}</span>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className="bg-card text-card-foreground rounded-lg px-4 py-2 shadow-sm border border-border group-hover:border-transparent transition-all duration-300"
+              >
+                <span className="font-medium">{skill.name}</span>
+              </motion.div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-lg blur opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+            </div>
           ))}
         </motion.div>
 
