@@ -54,7 +54,7 @@ const Navigation = () => {
           isScrolled
             ? 'bg-background/80 backdrop-blur-md shadow-professional-md border-b border-border'
             : 'bg-transparent'
-        }`}
+        } ${!isScrolled ? 'dark' : ''}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
