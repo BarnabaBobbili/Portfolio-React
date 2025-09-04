@@ -85,79 +85,83 @@ const Publications = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="card-elevated hover:shadow-professional-xl">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-6">
-                  {/* Paper Icon */}
-                  <div className="flex-shrink-0 mb-4 lg:mb-0">
-                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent p-0.5 group-hover:scale-110 transition-transform duration-300">
-                      <div className="w-full h-full bg-card rounded-xl flex items-center justify-center">
-                        <FileText size={28} className="text-foreground" />
+              <div className="border border-gray-200 shadow-md p-0.5 rounded-lg hover:bg-gradient-to-r from-red-500 via-yellow-500 to-green-500
+                            dark:hover:bg-none dark:border-border
+                            dark:bg-card dark:hover:shadow-[0_0_10px_rgba(255,255,255,0.5),0_0_20px_rgba(0,150,255,0.4)] transition-all duration-300">
+                <div className="bg-card text-card-foreground rounded-md h-full p-6">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-6">
+                    {/* Paper Icon */}
+                    <div className="flex-shrink-0 mb-4 lg:mb-0">
+                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent p-0.5 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-full h-full bg-card rounded-xl flex items-center justify-center">
+                          <FileText size={28} className="text-foreground" />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Paper Content */}
-                  <div className="flex-1">
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-tight">
-                          {paper.title}
-                        </h3>
-                        
-                        <div className="flex flex-wrap items-center gap-4 mb-3 text-sm text-muted-foreground">
-                          <div className="flex items-center">
-                            <Users size={16} className="mr-1" />
-                            <span>{paper.authors.join(', ')}</span>
+                    {/* Paper Content */}
+                    <div className="flex-1">
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-tight">
+                            {paper.title}
+                          </h3>
+
+                          <div className="flex flex-wrap items-center gap-4 mb-3 text-sm text-muted-foreground">
+                            <div className="flex items-center">
+                              <Users size={16} className="mr-1" />
+                              <span>{paper.authors.join(', ')}</span>
+                            </div>
+                            <div className="flex items-center">
+                              <Calendar size={16} className="mr-1" />
+                              <span>{paper.year}</span>
+                            </div>
+                            <span className="px-2 py-1 bg-accent/10 text-accent rounded text-xs font-medium border border-accent/20">
+                              {paper.type}
+                            </span>
                           </div>
-                          <div className="flex items-center">
-                            <Calendar size={16} className="mr-1" />
-                            <span>{paper.year}</span>
-                          </div>
-                          <span className="px-2 py-1 bg-accent/10 text-accent rounded text-xs font-medium border border-accent/20">
-                            {paper.type}
-                          </span>
+                        </div>
+
+                        {/* DOI Link */}
+                        <motion.a
+                          href={`https://doi.org/${paper.doi}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center space-x-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary-dark transition-colors text-sm font-medium"
+                        >
+                          <ExternalLink size={16} />
+                          <span>View Paper</span>
+                        </motion.a>
+                      </div>
+
+                      <p className="text-muted-foreground italic mb-4 leading-relaxed">
+                        {paper.journal}
+                      </p>
+
+                      <p className="text-foreground mb-4 leading-relaxed">
+                        <strong>Abstract:</strong> {paper.abstract}
+                      </p>
+
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">Keywords:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {paper.keywords.map((keyword, keywordIndex) => (
+                            <span
+                              key={keywordIndex}
+                              className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm border border-border"
+                            >
+                              {keyword}
+                            </span>
+                          ))}
                         </div>
                       </div>
 
-                      {/* DOI Link */}
-                      <motion.a
-                        href={`https://doi.org/${paper.doi}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        className="flex items-center space-x-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary-dark transition-colors text-sm font-medium"
-                      >
-                        <ExternalLink size={16} />
-                        <span>View Paper</span>
-                      </motion.a>
-                    </div>
-
-                    <p className="text-muted-foreground italic mb-4 leading-relaxed">
-                      {paper.journal}
-                    </p>
-
-                    <p className="text-foreground mb-4 leading-relaxed">
-                      <strong>Abstract:</strong> {paper.abstract}
-                    </p>
-
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Keywords:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {paper.keywords.map((keyword, keywordIndex) => (
-                          <span
-                            key={keywordIndex}
-                            className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm border border-border"
-                          >
-                            {keyword}
-                          </span>
-                        ))}
+                      <div className="mt-4 pt-4 border-t border-border">
+                        <p className="text-sm text-muted-foreground">
+                          <strong>DOI:</strong> {paper.doi}
+                        </p>
                       </div>
-                    </div>
-
-                    <div className="mt-4 pt-4 border-t border-border">
-                      <p className="text-sm text-muted-foreground">
-                        <strong>DOI:</strong> {paper.doi}
-                      </p>
                     </div>
                   </div>
                 </div>
