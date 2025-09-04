@@ -111,48 +111,17 @@ const Skills = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="grid md:grid-cols-2 gap-8"
+          className="flex flex-wrap justify-center gap-4"
         >
           {skillCategories[activeCategory].skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card-elevated group"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              className="bg-card text-card-foreground rounded-lg px-4 py-2 shadow-sm border border-border hover:bg-secondary transition-colors"
             >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {skill.name}
-                </h3>
-                <span className="text-sm font-bold text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
-              
-              <div className="relative">
-                <div className="w-full h-3 bg-secondary rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
-                    className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative`}
-                  >
-                    <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-                  </motion.div>
-                </div>
-                
-                {/* Skill level indicator */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 + 0.8 }}
-                  className="absolute top-0 mt-4 text-xs font-medium text-muted-foreground"
-                  style={{ left: `${Math.min(skill.level, 85)}%` }}
-                >
-                  {skill.level >= 90 ? 'Expert' : skill.level >= 80 ? 'Advanced' : 'Intermediate'}
-                </motion.div>
-              </div>
+              <span className="font-medium">{skill.name}</span>
             </motion.div>
           ))}
         </motion.div>
