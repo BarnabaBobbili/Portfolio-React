@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 
 const Navigation = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
