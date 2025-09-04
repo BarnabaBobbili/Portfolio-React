@@ -10,11 +10,6 @@ const Education = () => {
       period: "2022 - 2024",
       gpa: "3.8/4.0",
       description: "Specialized in Machine Learning, Statistical Analysis, and Big Data Technologies. Thesis on 'Deep Learning Applications in Predictive Analytics'.",
-      highlights: [
-        "Dean's List (4 semesters)",
-        "Graduate Research Assistant",
-        "Machine Learning Certification"
-      ]
     },
     {
       degree: "Bachelor of Engineering in Computer Science",
@@ -23,11 +18,6 @@ const Education = () => {
       period: "2018 - 2022",
       gpa: "3.7/4.0",
       description: "Comprehensive study in Computer Science fundamentals, Software Engineering, and Data Structures. Senior project focused on AI-powered web applications.",
-      highlights: [
-        "Magna Cum Laude",
-        "Computer Science Society President",
-        "Programming Competition Winner"
-      ]
     },
     {
       degree: "High School Diploma",
@@ -36,11 +26,6 @@ const Education = () => {
       period: "2016 - 2018",
       gpa: "95/100",
       description: "Strong foundation in Mathematics, Physics, and Computer Science. Active in robotics club and programming competitions.",
-      highlights: [
-        "Valedictorian",
-        "National Math Olympiad - Bronze Medal",
-        "Science Fair - First Place"
-      ]
     }
   ];
 
@@ -85,54 +70,44 @@ const Education = () => {
 
                 {/* Education Card */}
                 <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'}`}>
-                  <div className="card-elevated group hover:shadow-professional-xl">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                          <GraduationCap size={24} />
+                  <div className="border border-gray-200 shadow-md p-0.5 rounded-lg hover:bg-gradient-to-r from-red-500 via-yellow-500 to-green-500
+                            dark:hover:bg-none dark:border-border
+                            dark:bg-card dark:hover:shadow-[0_0_10px_rgba(255,255,255,0.5),0_0_20px_rgba(0,150,255,0.4)] transition-all duration-300 group">
+                    <div className="bg-card text-card-foreground rounded-md h-full p-6">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center space-x-3">
+                          <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <GraduationCap size={24} />
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                              {edu.degree}
+                            </h3>
+                            <p className="text-primary font-semibold">{edu.institution}</p>
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                            {edu.degree}
-                          </h3>
-                          <p className="text-primary font-semibold">{edu.institution}</p>
+                        <div className="text-right">
+                          <div className="flex items-center text-muted-foreground mb-1">
+                            <Calendar size={16} className="mr-1" />
+                            <span className="text-sm font-medium">{edu.period}</span>
+                          </div>
+                          <div className="flex items-center text-muted-foreground">
+                            <MapPin size={16} className="mr-1" />
+                            <span className="text-sm">{edu.location}</span>
+                          </div>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <div className="flex items-center text-muted-foreground mb-1">
-                          <Calendar size={16} className="mr-1" />
-                          <span className="text-sm font-medium">{edu.period}</span>
-                        </div>
-                        <div className="flex items-center text-muted-foreground">
-                          <MapPin size={16} className="mr-1" />
-                          <span className="text-sm">{edu.location}</span>
-                        </div>
-                      </div>
-                    </div>
 
-                    <div className="mb-4">
-                      <div className="flex items-center space-x-4 mb-3">
-                        <div className="flex items-center text-accent">
-                          <Award size={16} className="mr-1" />
-                          <span className="text-sm font-semibold">GPA: {edu.gpa}</span>
+                      <div className="mb-4">
+                        <div className="flex items-center space-x-4 mb-3">
+                          <div className="flex items-center text-accent">
+                            <Award size={16} className="mr-1" />
+                            <span className="text-sm font-semibold">GPA: {edu.gpa}</span>
+                          </div>
                         </div>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {edu.description}
-                      </p>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Key Achievements:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {edu.highlights.map((highlight, highlightIndex) => (
-                          <span
-                            key={highlightIndex}
-                            className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20"
-                          >
-                            {highlight}
-                          </span>
-                        ))}
+                        <p className="text-muted-foreground leading-relaxed">
+                          {edu.description}
+                        </p>
                       </div>
                     </div>
                   </div>

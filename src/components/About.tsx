@@ -49,25 +49,29 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="card-elevated p-6">
-              <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-                I'm a passionate Computer Science Engineering graduate with a strong focus on
-                data analysis and artificial intelligence. My journey in technology has been
-                driven by curiosity and a desire to solve complex problems through innovative solutions.
-              </p>
+            <div className="border border-gray-200 shadow-md p-0.5 rounded-lg hover:bg-gradient-to-r from-red-500 via-yellow-500 to-green-500
+                            dark:hover:bg-none dark:border-border
+                            dark:bg-card dark:hover:shadow-[0_0_10px_rgba(255,255,255,0.5),0_0_20px_rgba(0,150,255,0.4)] transition-all duration-300">
+              <div className="bg-card text-card-foreground rounded-md h-full p-6">
+                <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+                  I'm a passionate Computer Science Engineering graduate with a strong focus on
+                  data analysis and artificial intelligence. My journey in technology has been
+                  driven by curiosity and a desire to solve complex problems through innovative solutions.
+                </p>
 
-              <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-                With expertise in machine learning, data visualization, and software development,
-                I enjoy transforming raw data into meaningful insights that drive decision-making.
-                I'm constantly learning and exploring new technologies to stay at the forefront
-                of the rapidly evolving tech landscape.
-              </p>
+                <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+                  With expertise in machine learning, data visualization, and software development,
+                  I enjoy transforming raw data into meaningful insights that drive decision-making.
+                  I'm constantly learning and exploring new technologies to stay at the forefront
+                  of the rapidly evolving tech landscape.
+                </p>
 
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                When I'm not coding or analyzing data, you can find me contributing to open-source
-                projects, writing technical articles, or exploring the latest developments in AI
-                and machine learning.
-              </p>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  When I'm not coding or analyzing data, you can find me contributing to open-source
+                  projects, writing technical articles, or exploring the latest developments in AI
+                  and machine learning.
+                </p>
+              </div>
             </div>
 
             {/* Social Links */}

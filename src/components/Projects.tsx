@@ -89,66 +89,70 @@ const Projects = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="card-elevated h-full flex flex-col">
-                {/* Project Icon */}
-                <div className="relative mb-6">
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${project.color} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="w-full h-full bg-card rounded-xl flex items-center justify-center">
-                      <project.icon size={28} className="text-foreground" />
+              <div className="border border-gray-200 shadow-md p-0.5 rounded-lg hover:bg-gradient-to-r from-red-500 via-yellow-500 to-green-500
+                            dark:hover:bg-none dark:border-border
+                            dark:bg-card dark:hover:shadow-[0_0_10px_rgba(255,255,255,0.5),0_0_20px_rgba(0,150,255,0.4)] transition-all duration-300 h-full">
+                <div className="bg-card text-card-foreground rounded-md h-full p-6 flex flex-col">
+                  {/* Project Icon */}
+                  <div className="relative mb-6">
+                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${project.color} p-0.5 group-hover:scale-110 transition-transform duration-300`}>
+                      <div className="w-full h-full bg-card rounded-xl flex items-center justify-center">
+                        <project.icon size={28} className="text-foreground" />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Project Content */}
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
+                  {/* Project Content */}
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
 
-                  {/* Technologies */}
-                  <div className="mb-6">
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-1 bg-primary/10 text-primary rounded text-sm font-medium border border-primary/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Technologies */}
+                    <div className="mb-6">
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-2 py-1 bg-primary/10 text-primary rounded text-sm font-medium border border-primary/20"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Project Links */}
-                <div className="flex space-x-4 pt-4 border-t border-border">
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <Github size={18} />
-                    <span className="text-sm font-medium">Code</span>
-                  </motion.a>
-                  
-                  {project.demo && (
+                  {/* Project Links */}
+                  <div className="flex space-x-4 pt-4 border-t border-border">
                     <motion.a
-                      href={project.demo}
+                      href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
-                      className="flex items-center space-x-2 text-primary hover:text-accent transition-colors"
+                      className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      <ExternalLink size={18} />
-                      <span className="text-sm font-medium">Live Demo</span>
+                      <Github size={18} />
+                      <span className="text-sm font-medium">Code</span>
                     </motion.a>
-                  )}
+
+                    {project.demo && (
+                      <motion.a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        className="flex items-center space-x-2 text-primary hover:text-accent transition-colors"
+                      >
+                        <ExternalLink size={18} />
+                        <span className="text-sm font-medium">Live Demo</span>
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>
