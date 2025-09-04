@@ -64,13 +64,9 @@ const Skills = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="
-                        border border-gray-200 shadow-md p-0.5 rounded-lg hover:bg-gradient-to-r from-red-500 via-yellow-500 to-green-500
-                            /* Dark mode override → cancel rainbow */
+              className="border border-gray-200 shadow-md p-0.5 rounded-lg hover:bg-gradient-to-r from-red-500 via-yellow-500 to-green-500
                             dark:hover:bg-none dark:border-border
-
-                        /* Dark mode glow */
-                        dark:bg-card dark:hover:shadow-[0_0_10px_rgba(255,255,255,0.5),0_0_20px_rgba(0,150,255,0.4)]"
+                            dark:bg-card dark:hover:shadow-[0_0_10px_rgba(255,255,255,0.5),0_0_20px_rgba(0,150,255,0.4)] transition-all duration-300"
             >
               <div className="bg-card text-card-foreground rounded-md px-4 py-2">
                 <span className="font-medium">{skill.name}</span>
