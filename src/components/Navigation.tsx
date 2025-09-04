@@ -50,6 +50,9 @@ const Navigation = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
+        // When not scrolled, the nav is over the hero section.
+        // We apply the 'dark' class to ensure nav items are visible against the dark hero background.
+        // This is only intended for pages with a hero section at the top.
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
             ? 'bg-background/80 backdrop-blur-md shadow-professional-md border-b border-border'
