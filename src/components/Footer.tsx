@@ -23,7 +23,7 @@ const Footer = () => {
               className="text-center md:text-left"
             >
               <h3 className="text-2xl font-bold gradient-text mb-3">
-                Barnaba Bichsel
+                Barnaba Bobbili
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 Aspiring Data Analyst passionate about transforming data into insights 
@@ -96,7 +96,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <span>© {currentYear} Barnaba Bichsel. All rights reserved.</span>
+              <span>© {currentYear} Barnaba Bobbili. All rights reserved.</span>
             </div>
 
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">

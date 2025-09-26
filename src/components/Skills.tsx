@@ -76,7 +76,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Additional Skills Summary */}
-        <motion.div
+        {/*<motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -122,7 +122,7 @@ const Skills = () => {
             <h3 className="text-xl font-bold mb-2">50+</h3>
             <p className="text-muted-foreground">Projects Completed</p>
           </div>
-        </motion.div>
+        </motion.div>*/}
       </div>
     </section>
   );

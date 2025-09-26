@@ -76,7 +76,7 @@ const Hero = () => {
           className="text-5xl md:text-7xl font-bold mb-6"
         >
           <span className="gradient-text">Barnaba</span>{' '}
-          <span className="text-foreground">Bichsel</span>
+          <span className="text-foreground">Bobbili</span>
         </motion.h1>
         
         <motion.div
